@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+{% load filter %}
+{% load static %}
+
+{% block title %}Active Listings{% endblock %}
+
+{% block head %}
+    <link href="{% static 'auctions/listings.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    <br>
+    {% for listVar in listings %}
+        {% comment %} Check for active listings {% endcomment %}
+        {% if listVar.status %}
+            <a href="{% url 'listingPage' title=listVar.title|titleToSlug id=listVar.id %}" class="no-link-style">
+                <div class="topBorder">
+
+                    {% include "auctions/listingsDetails.html" with listing=listVar %}
+
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

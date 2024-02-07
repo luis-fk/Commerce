@@ -1,0 +1,29 @@
+body {
+    padding: 10px;
+}
+
+.error {
+    font: 10px;
+    color: rgb(219, 71, 71);
+}
+
+.bids {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.loginRegisterBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+
